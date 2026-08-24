@@ -17,7 +17,6 @@ import base64
 _BASE = os.path.dirname(os.path.abspath(__file__))
 
 logo1 = os.path.join(_BASE, "gambar", "logo_dsb.png")
-logo2 = os.path.join(_BASE, "gambar", "logo_ppsb.png")
 
 # Set page configuration
 st.set_page_config(
@@ -151,7 +150,7 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
-CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vROstfR4q2cYntbPuCY8BF2zBSSVa7RWKGTSU8CuiKKuEj70S9sq93S0WOYM7QGf-Pq8W3wQX0mD5Ov/pub?gid=2003469515&single=true&output=csv"
+CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTzb3MRr6zTos0wsEjV4BvLzZRWrz8e6RdKPHBnOH2zpJcdN6FhSPfy4Vt2NbxJa1Pa3O4FSxyzSDUG/pub?output=csv"
 
 # Robust Parsing Helper Functions
 def parse_id_number(val):
@@ -321,10 +320,9 @@ else:
     df_trends = df_raw[df_raw['Material'].isin(selected_materials)]
 
     # ------------------ HEADER ------------------
-    logo = os.path.join(_BASE, "gambar", "logo_ppsb.png")
 
     # Logo di atas banner
-    col1, col2, col3 = st.columns([4,2,4])
+    col1, col2 = st.columns([4,2,4])
 
     with col2:
         st.image(logo, width=300)

@@ -70,46 +70,73 @@ st.markdown(f"""
     }}
 
     /* Card Metrics Styling */
-    .metric-card {{
-        background-color: #FFFFFF;
-        border-left: 5px solid {PRIMARY_GOLD};
-        border-radius: 8px;
-        padding: 1.2rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        margin-bottom: 1rem;
-        transition: transform 0.2s ease-in-out;
-    }}
-    .metric-card:hover {{
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-    }}
-    .metric-card.safe {{
-        border-left: 5px solid #2E7D32;
-    }}
-    .metric-card.warning {{
-        border-left: 5px solid #FBC02D;
-    }}
-    .metric-card.critical {{
-        border-left: 5px solid #D32F2F;
-    }}
-    
-    .metric-title {{
-        font-size: 0.9rem;
-        color: #556B5C;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        font-weight: 600;
-    }}
-    .metric-value {{
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: {DEEP_GREEN};
-        margin: 0.2rem 0;
-    }}
-    .metric-desc {{
-        font-size: 0.8rem;
-        color: #7A9080;
-    }}
+.metric-card {{
+    background-color: #FFFFFF;
+    border-left: 5px solid {PRIMARY_GOLD};
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+
+    /* Semua KPI memiliki ukuran yang sama */
+    height: 190px;
+    min-height: 190px;
+    box-sizing: border-box;
+
+    /* Susunan isi kartu */
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.2s ease-in-out;
+}}
+
+.metric-card:hover {{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}}
+
+.metric-card.safe {{
+    border-left: 5px solid #2E7D32;
+}}
+
+.metric-card.warning {{
+    border-left: 5px solid #FBC02D;
+}}
+
+.metric-card.critical {{
+    border-left: 5px solid #D32F2F;
+}}
+
+.metric-title {{
+    font-size: 0.9rem;
+    color: #556B5C;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+
+    /* Tinggi area judul dibuat konsisten */
+    min-height: 45px;
+    line-height: 1.35;
+}}
+
+.metric-value {{
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: {DEEP_GREEN};
+    margin: 0.2rem 0;
+
+    /* Angka KPI tetap satu baris */
+    white-space: nowrap;
+}}
+
+.metric-desc {{
+    font-size: 0.8rem;
+    color: #7A9080;
+    line-height: 1.4;
+
+    /* Deskripsi berada di bagian bawah kartu */
+    margin-top: auto;
+}}
 
     /* Alert Banner Styling */
     .alert-banner {{

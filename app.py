@@ -321,12 +321,6 @@ else:
 
     # ------------------ HEADER ------------------
 
-    # Logo di atas banner
-    col1, col2 = st.columns([4,2,4])
-
-    with col2:
-        st.image(logo, width=300)
-
     st.markdown("""
         <div style="
             background:#234d39;
